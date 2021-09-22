@@ -1,22 +1,29 @@
-import sys
-
-
-def factorial(num: int):
-    if num >= 1:
-        return num * factorial(num - 1)
-
-    else:
+import math
+def factorial(n):
+    if n == 0:
         return 1
+    else:
+        return n * factorial(n - 1)
 
 
-try:
-    n = int(input("Enter a number to calculate it's factorial: "))
+n = int(input("Input a number to compute the factiorial : "))
+print(factorial(n))
 
-except ValueError:
-    print('Please enter an integer!')
-    sys.exit()
+"""
+Method 2:
+Here we are going to use in-built fuction for factorial which is provided by Python for
+user conveniance.
 
-if n < 0:
-    print('Please enter a positive integer!')
+Steps:
+     -For this you should import math module first
+     -and use factorial() method from math module
+     
+Note:
+    Appear error when pass a negative or fraction value in factorial() method, so plz refrain from this.
+
+Let's code it:
+"""
+if n>=0 :
+    print(math.factorial(n))
 else:
-    print(f"The factorial of {n} is: {factorial(n)}")
+    print("Value of n is inValid!")
